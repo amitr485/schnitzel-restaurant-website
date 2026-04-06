@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
@@ -24,18 +23,16 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>שניצליגה</h1>
-            <p>שניצל טעים, טרי וכשר בכל הזמן!</p>
+            <p>השניצל של פתח תקווה - טעים, טרי וכשר!</p>
             <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">
                 הצג תפריט
             </button>
         </div>
     </section>
 
-    <!-- Highlights -->
     <section class="highlights">
         <div class="container">
             <div class="highlight-card">
@@ -50,51 +47,54 @@
             </div>
             <div class="highlight-card">
                 <i class="fas fa-star"></i>
-                <h3>דירוג 4.6</h3>
-                <p>95 ביקורות חיוביות מלקוחות</p>
+                <h3>דירוג 8.6 בוולט</h3>
+                <p>עשרות ביקורות חיוביות מלקוחות</p>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
     <section id="menu" class="menu">
         <div class="container">
             <h2>תפריט</h2>
             
-            <!-- Menu Categories -->
             <div class="menu-categories">
                 <button class="category-btn active" onclick="filterMenu('all')">הכל</button>
-                <button class="category-btn" onclick="filterMenu('pita')">פיתות</button>
-                <button class="category-btn" onclick="filterMenu('baguette')">בגטים</button>
-                <button class="category-btn" onclick="filterMenu('plate')">צלחות</button>
+                <button class="category-btn" onclick="filterMenu('pita')">בפיתה</button>
+                <button class="category-btn" onclick="filterMenu('baguette')">בגט / חלה</button>
+                <button class="category-btn" onclick="filterMenu('plate')">בצלחת</button>
                 <button class="category-btn" onclick="filterMenu('salad')">סלטים</button>
-                <button class="category-btn" onclick="filterMenu('side')">תוספות</button>
-                <button class="category-btn" onclick="filterMenu('drink')">משקאות</button>
+                <button class="category-btn" onclick="filterMenu('side')">נשנושים</button>
+                <button class="category-btn" onclick="filterMenu('drink')">שתייה קלה</button>
             </div>
 
-            <!-- Menu Items Grid -->
             <div class="menu-grid">
                 
-                <!-- PITA SECTION -->
                 <div class="menu-item" data-category="pita">
                     <img src="https://images.unsplash.com/photo-1593521884183-ad2a5787cb1b?w=400&h=300&fit=crop" alt="שניצל בפיתה" class="menu-item-image">
                     <h3>שניצל בפיתה</h3>
-                    <p class="description">שניצל טרי עם סלטים וממרחים</p>
+                    <p class="description">שניצל טרי עם סלטים וממרחים לבחירה</p>
                     <p class="price">₪50</p>
                 </div>
 
                 <div class="menu-item" data-category="pita">
                     <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop" alt="חזה עוף בפיתה" class="menu-item-image">
                     <h3>חזה עוף בפיתה</h3>
-                    <p class="description">חזה עוף טרי עם סלטים</p>
-                    <p class="price">₪50</p>
+                    <p class="description">חזה עוף טרי עם סלטים וממרחים לבחירה</p>
+                    <p class="price">₪55</p>
+                </div>
+
+                <div class="menu-item" data-category="pita">
+                    <img src="https://images.unsplash.com/photo-1600080868343-f0d5a5edd4d7?w=400&h=300&fit=crop" alt="פרגית בפיתה" class="menu-item-image">
+                    <h3>פרגית בפיתה</h3>
+                    <p class="description">פרגית רכה וטעימה עם סלטים</p>
+                    <p class="price">₪60</p>
                 </div>
 
                 <div class="menu-item" data-category="pita">
                     <img src="https://images.unsplash.com/photo-1612440874173-0d7e3a9b93d3?w=400&h=300&fit=crop" alt="נקניקייה בפיתה" class="menu-item-image">
                     <h3>נקניקייה בפיתה</h3>
                     <p class="description">נקניקייה עם סלטים וממרחים</p>
-                    <p class="price">₪35</p>
+                    <p class="price">₪39</p>
                 </div>
 
                 <div class="menu-item" data-category="pita">
@@ -104,26 +104,18 @@
                     <p class="price">₪32</p>
                 </div>
 
-                <div class="menu-item" data-category="pita">
-                    <img src="https://images.unsplash.com/photo-1600080868343-f0d5a5edd4d7?w=400&h=300&fit=crop" alt="עוף בפיתה" class="menu-item-image">
-                    <h3>עוף בפיתה</h3>
-                    <p class="description">עוף רך עם תוספות</p>
-                    <p class="price">₪60</p>
-                </div>
-
-                <!-- BAGUETTE SECTION -->
                 <div class="menu-item" data-category="baguette">
                     <img src="https://images.unsplash.com/photo-1592080210386-1e88300f0f48?w=400&h=300&fit=crop" alt="שניצל בגט" class="menu-item-image">
                     <h3>שניצל בגט</h3>
                     <p class="description">שניצל בגט טרי עם סלטים וממרחים</p>
-                    <p class="price">₪55</p>
+                    <p class="price">₪50</p>
                 </div>
 
                 <div class="menu-item" data-category="baguette">
                     <img src="https://images.unsplash.com/photo-1520072959219-c595dc870360?w=400&h=300&fit=crop" alt="שניצל בחלה" class="menu-item-image">
                     <h3>שניצל בחלה</h3>
-                    <p class="description">שניצל בחלה עם סלטים וממרחים</p>
-                    <p class="price">₪55</p>
+                    <p class="description">שניצל בחלה מתוקה ורכה</p>
+                    <p class="price">₪50</p>
                 </div>
 
                 <div class="menu-item" data-category="baguette">
@@ -133,101 +125,76 @@
                     <p class="price">₪55</p>
                 </div>
 
-                <div class="menu-item" data-category="baguette">
-                    <img src="https://images.unsplash.com/photo-1612440874173-0d7e3a9b93d3?w=400&h=300&fit=crop" alt="נקניקייה בגט" class="menu-item-image">
-                    <h3>נקניקייה בגט</h3>
-                    <p class="description">נקניקייה עם סלטים</p>
-                    <p class="price">₪39</p>
-                </div>
-
-                <div class="menu-item" data-category="baguette">
-                    <img src="https://images.unsplash.com/photo-1584431311433-a7b1f0ffbfb2?w=400&h=300&fit=crop" alt="פלאפל בגט" class="menu-item-image">
-                    <h3>פלאפל בגט</h3>
-                    <p class="description">פלאפל עם סלטים וממרחים</p>
-                    <p class="price">₪38</p>
-                </div>
-
-                <!-- PLATE SECTION -->
                 <div class="menu-item" data-category="plate">
                     <img src="https://images.unsplash.com/photo-1609501676725-7186f017a4b7?w=400&h=300&fit=crop" alt="שניצל בצלחת" class="menu-item-image">
                     <h3>שניצל בצלחת</h3>
-                    <p class="description">שניצל חם ופריך עם 2 תוספות</p>
+                    <p class="description">שניצל חם ופריך מוגש בחמגשית עם שתי תוספות</p>
                     <p class="price">₪65</p>
                 </div>
 
                 <div class="menu-item" data-category="plate">
                     <img src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=400&h=300&fit=crop" alt="חזה עוף בצלחת" class="menu-item-image">
                     <h3>חזה עוף בצלחת</h3>
-                    <p class="description">חזה עוף טרי עם 2 תוספות</p>
+                    <p class="description">חזה עוף טרי עם 2 תוספות לבחירה</p>
                     <p class="price">₪65</p>
                 </div>
 
                 <div class="menu-item" data-category="plate">
-                    <img src="https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&h=300&fit=crop" alt="עוף בצלחת" class="menu-item-image">
-                    <h3>עוף בצלחת</h3>
-                    <p class="description">עוף רך עם 2 תוספות</p>
+                    <img src="https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&h=300&fit=crop" alt="פרגית בצלחת" class="menu-item-image">
+                    <h3>פרגית בצלחת</h3>
+                    <p class="description">נתחי פרגית עם 2 תוספות לבחירה</p>
                     <p class="price">₪69</p>
                 </div>
 
-                <div class="menu-item" data-category="plate">
-                    <img src="https://images.unsplash.com/photo-1585238341710-4b51926e0a5f?w=400&h=300&fit=crop" alt="פלאפל בצלחת" class="menu-item-image">
-                    <h3>פלאפל בצלחת</h3>
-                    <p class="description">פלאפל עם 2 תוספות</p>
-                    <p class="price">₪42</p>
-                </div>
-
-                <!-- SALAD SECTION -->
                 <div class="menu-item" data-category="salad">
                     <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop" alt="סלט שניצל" class="menu-item-image">
                     <h3>סלט שניצל</h3>
-                    <p class="description">סלט טרי עם נתחי שניצל</p>
+                    <p class="description">עגבניה, מלפפון, חסה, כרוב לבן, בצל מקורמל ונתחי שניצל</p>
                     <p class="price">₪64</p>
                 </div>
 
                 <div class="menu-item" data-category="salad">
                     <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=400&h=300&fit=crop" alt="סלט חזה עוף" class="menu-item-image">
                     <h3>סלט חזה עוף</h3>
-                    <p class="description">סלט טרי עם נתחי חזה עוף</p>
+                    <p class="description">עגבניה, מלפפון, חסה, כרוב לבן, בצל מקורמל ונתחי חזה עוף</p>
                     <p class="price">₪64</p>
                 </div>
 
                 <div class="menu-item" data-category="salad">
-                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="סלט עוף" class="menu-item-image">
-                    <h3>סלט עוף</h3>
-                    <p class="description">סלט טרי עם נתחי עוף</p>
+                    <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=400&h=300&fit=crop" alt="סלט פרגית" class="menu-item-image">
+                    <h3>סלט פרגית</h3>
+                    <p class="description">עגבניה, מלפפון, חסה, כרוב לבן, בצל מקורמל ונתחי פרגית</p>
                     <p class="price">₪69</p>
                 </div>
 
-                <div class="menu-item" data-category="salad">
-                    <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=400&h=300&fit=crop" alt="סלט פלאפל" class="menu-item-image">
-                    <h3>סלט פלאפל</h3>
-                    <p class="description">סלט טרי עם פלאפל</p>
-                    <p class="price">₪42</p>
-                </div>
-
-                <!-- SIDES SECTION -->
                 <div class="menu-item" data-category="side">
                     <img src="https://images.unsplash.com/photo-1585238341710-4b51926e0a5f?w=400&h=300&fit=crop" alt="צ'יפס" class="menu-item-image">
                     <h3>צ'יפס</h3>
-                    <p class="description">תפוחי אדמה עם ציפוי פריך</p>
-                    <p class="price">₪20</p>
+                    <p class="description">עם ציפוי פריך</p>
+                    <p class="price">₪25</p>
                 </div>
 
                 <div class="menu-item" data-category="side">
                     <img src="https://images.unsplash.com/photo-1629156069898-49953e39b3ac?w=400&h=300&fit=crop" alt="כדורי פירה" class="menu-item-image">
                     <h3>כדורי פירה</h3>
-                    <p class="description">כדורי תפו"א קראנצ'י ונימוחים</p>
-                    <p class="price">₪25</p>
+                    <p class="description">כדורי תפו"א מושלמים נימוח מבפנים ופריך מבחוץ</p>
+                    <p class="price">₪29</p>
                 </div>
 
                 <div class="menu-item" data-category="side">
                     <img src="https://images.unsplash.com/photo-1599599810692-d3ee09d4bf84?w=400&h=300&fit=crop" alt="טבעות בצל" class="menu-item-image">
                     <h3>טבעות בצל</h3>
-                    <p class="description">טבעות בצל פריכות וטעימות</p>
+                    <p class="description">טבעות בצל פריכות וטעימות במיוחד</p>
                     <p class="price">₪25</p>
                 </div>
 
-                <!-- DRINKS SECTION -->
+                <div class="menu-item" data-category="side">
+                    <img src="https://images.unsplash.com/photo-1600080868343-f0d5a5edd4d7?w=400&h=300&fit=crop" alt="פוטטוס" class="menu-item-image">
+                    <h3>פוטטוס</h3>
+                    <p class="description">פלחי תפו"א קראנצ'י מבחוץ נימוח מבפנים</p>
+                    <p class="price">₪29</p>
+                </div>
+
                 <div class="menu-item" data-category="drink">
                     <img src="https://images.unsplash.com/photo-1554866585-c94febf27dca?w=400&h=300&fit=crop" alt="קולה" class="menu-item-image">
                     <h3>קולה / קולה זירו</h3>
@@ -251,15 +218,15 @@
 
                 <div class="menu-item" data-category="drink">
                     <img src="https://images.unsplash.com/photo-1599599810880-02955e1e0fd8?w=400&h=300&fit=crop" alt="מים מינרליים" class="menu-item-image">
-                    <h3>מים מינרליים</h3>
+                    <h3>מים מינרליים נביעות</h3>
                     <p class="description">בקבוק 500 מ"ל</p>
                     <p class="price">₪12</p>
                 </div>
 
                 <div class="menu-item" data-category="drink">
-                    <img src="https://images.unsplash.com/photo-1585518419759-8d5763e09e6c?w=400&h=300&fit=crop" alt="משקאות אחרים" class="menu-item-image">
-                    <h3>תה קור / משקאות אחרים</h3>
-                    <p class="description">בקבוק או פחית</p>
+                    <img src="https://images.unsplash.com/photo-1585518419759-8d5763e09e6c?w=400&h=300&fit=crop" alt="פיוז טי" class="menu-item-image">
+                    <h3>פיוז טי אפרסק</h3>
+                    <p class="description">בקבוק 500 מ"ל</p>
                     <p class="price">₪15</p>
                 </div>
 
@@ -267,27 +234,26 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2>אודות שניצליגה</h2>
                     <p>שניצליגה היא מסעדת מזון מהיר המתמחה בשניצל טוב ופרגיות מעולות. אנחנו משתמשים רק במצרכים טריים ובעלי איכות גבוהה.</p>
-                    <p>השירות שלנו חביב ומהיר, והאוכל תמיד חם וטעים. אנחנו מציעים הזמנה בחנות, אכילה במקום ומשלוח ללא מגע.</p>
-                    <p>מיקומנו במרכז אם המושבות בפתח תקווה, וחנות פתוחה עד שעה 22:00 כל יום.</p>
+                    <p>השירות שלנו חביב ומהיר, והאוכל תמיד חם וטעים. אנחנו מציעים הזמנה בחנות, אכילה במקום ומשלוח מהיר.</p>
+                    <p>מיקומנו בראשון לציון 1, פתח תקווה (בקעת אונו), ופתוחים בימים א'-ה' בין השעות 09:00–22:00 (רביעי עד 17:00, שישי עד 15:00).</p>
                     <div class="stats">
                         <div class="stat">
-                            <h3>4.6★</h3>
-                            <p>דירוג</p>
+                            <h3>8.6★</h3>
+                            <p>דירוג בוולט</p>
                         </div>
                         <div class="stat">
-                            <h3>95+</h3>
-                            <p>ביקורות</p>
+                            <h3>100%</h3>
+                            <p>בשרים איכותיים</p>
                         </div>
                         <div class="stat">
-                            <h3>50-100₪</h3>
-                            <p>טווח מחירים</p>
+                            <h3>כשר</h3>
+                            <p>בהשגחה</p>
                         </div>
                     </div>
                 </div>
@@ -295,7 +261,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>צור קשר</h2>
@@ -303,47 +268,37 @@
                 <div class="contact-info">
                     <i class="fas fa-map-marker-alt"></i>
                     <h3>כתובת</h3>
-                    <p>מרכז אם המושבות<br>פתח תקווה</p>
+                    <p>ראשון לציון 1<br>פתח תקווה</p>
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-phone"></i>
                     <h3>טלפון</h3>
-                    <p><a href="tel:0375839050">03-758-9050</a></p>
+                    <p><a href="tel:0508288892">050-828-8892</a></p>
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-clock"></i>
                     <h3>שעות פעילות</h3>
-                    <p>כל יום עד 22:00</p>
+                    <p>א'-ה': 09:00-22:00<br>שישי: 09:00-15:00</p>
                 </div>
                 <div class="contact-info">
                     <i class="fas fa-utensils"></i>
                     <h3>שירותים</h3>
-                    <p>הזמנה | אכילה במקום<br>משלוח ללא מגע</p>
+                    <p>הזמנה | אכילה במקום<br>משלוח מהיר</p>
                 </div>
             </div>
 
-            <!-- Order Options -->
             <div class="order-options">
                 <a href="https://wolt.com/he/isr/petah-tikva/restaurant/schnitzeliga" target="_blank" class="order-btn">
                     <i class="fas fa-shopping-bag"></i>
                     הזמן דרך וולט
                 </a>
-                <a href="https://www.10bis.co.il/next/en/restaurants/menu/delivery/46418/shnitzeliga" target="_blank" class="order-btn">
-                    <i class="fas fa-utensils"></i>
-                    הזמן דרך 10ביס
-                </a>
-                <a href="https://facebook.com" target="_blank" class="order-btn">
-                    <i class="fab fa-facebook"></i>
-                    עקוב בפייסבוק
-                </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 שניצליגה. כל הזכויות שמורות. | מרכז אם המושבות, פתח תקווה</p>
+            <p>&copy; 2026 שניצליגה. כל הזכויות שמורות. | פתח תקווה</p>
         </div>
     </footer>
 
