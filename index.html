@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שניצליגה - מסעדת שניצל איכותית</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-drumstick-bite"></i>
+                <span>שניצליגה</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">בית</a></li>
+                <li><a href="#menu">תפריט</a></li>
+                <li><a href="#about">אודותינו</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>שניצליגה</h1>
+            <p>שניצל טעים, טרי וכשר בכל הזמן!</p>
+            <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">
+                הצג תפריט
+            </button>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlight-card">
+                <i class="fas fa-bolt"></i>
+                <h3>הזמנה מהירה</h3>
+                <p>השירות שלנו מהיר וחביב</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-utensils"></i>
+                <h3>אוכל טעים</h3>
+                <p>מצרכים טריים באיכות גבוהה</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-star"></i>
+                <h3>דירוג 4.6</h3>
+                <p>95 ביקורות חיוביות מלקוחות</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>תפריט</h2>
+            
+            <!-- Menu Categories -->
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="filterMenu('all')">הכל</button>
+                <button class="category-btn" onclick="filterMenu('bsharim')">בשרים</button>
+                <button class="category-btn" onclick="filterMenu('side')">תוספות</button>
+                <button class="category-btn" onclick="filterMenu('drink')">משקאות</button>
+                <button class="category-btn" onclick="filterMenu('salad')">סלטים</button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="menu-grid">
+                <!-- Schnitzel Items -->
+                <div class="menu-item" data-category="bsharim">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #d4a574 0%, #c89968 100%);"></div>
+                    <h3>שניצל</h3>
+                    <p class="description">שניצל טרי ופריך</p>
+                    <p class="price">₪50</p>
+                </div>
+
+                <div class="menu-item" data-category="bsharim">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #e8b4a0 0%, #d4a28c 100%);"></div>
+                    <h3>שניצל בצלחת</h3>
+                    <p class="description">שניצל עם 2 תוספות</p>
+                    <p class="price">₪65</p>
+                </div>
+
+                <div class="menu-item" data-category="bsharim">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #d4a574 0%, #c89968 100%);"></div>
+                    <h3>חזה עוף</h3>
+                    <p class="description">חזה עוף טרי ובריא</p>
+                    <p class="price">₪55</p>
+                </div>
+
+                <div class="menu-item" data-category="bsharim">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #e8a8a8 0%, #d4a0a0 100%);"></div>
+                    <h3>פרגית</h3>
+                    <p class="description">פרגית ערימה לערומה</p>
+                    <p class="price">₪60</p>
+                </div>
+
+                <!-- Side Dishes -->
+                <div class="menu-item" data-category="side">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #f4d4a8 0%, #e8c494 100%);"></div>
+                    <h3>צ'יפס</h3>
+                    <p class="description">עם ציפוי פריך</p>
+                    <p class="price">₪25</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #f0d4a8 0%, #e0c494 100%);"></div>
+                    <h3>כדורי פירה</h3>
+                    <p class="description">נימוח מבפנים, פריך מבחוץ</p>
+                    <p class="price">₪29</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #f4d4a8 0%, #e8c494 100%);"></div>
+                    <h3>טבעות בצל</h3>
+                    <p class="description">פריכות וטעימות במיוחד</p>
+                    <p class="price">₪25</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #f0d4a8 0%, #e0c494 100%);"></div>
+                    <h3>פוטטוס</h3>
+                    <p class="description">פלחי תפו"א קראנצ'י</p>
+                    <p class="price">₪29</p>
+                </div>
+
+                <!-- Salads -->
+                <div class="menu-item" data-category="salad">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #a8d4a8 0%, #94c494 100%);"></div>
+                    <h3>סלט שניצל</h3>
+                    <p class="description">עם נתחי שניצל טרי</p>
+                    <p class="price">₪64</p>
+                </div>
+
+                <div class="menu-item" data-category="salad">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #a8d4a8 0%, #94c494 100%);"></div>
+                    <h3>סלט חזה עוף</h3>
+                    <p class="description">עם נתחי חזה עוף</p>
+                    <p class="price">₪64</p>
+                </div>
+
+                <!-- Drinks -->
+                <div class="menu-item" data-category="drink">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #a8a8d4 0%, #9494c4 100%);"></div>
+                    <h3>קולה</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪13</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <div class="menu-item-image" style="background: linear-gradient(135deg, #d4d4a8 0%, #c4c494 100%);"></div>
+                    <h3>ספרייט</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪13</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>אודות שניצליגה</h2>
+                    <p>שניצליגה היא מסעדת מזון מהיר המתמחה בשניצל טוב ופרגיות מעולות. אנחנו משתמשים רק במצרכים טריים ובעלי איכות גבוהה.</p>
+                    <p>השירות שלנו חביב ומהיר, והאוכל תמיד חם וטעים.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>4.6★</h3>
+                            <p>דירוג</p>
+                        </div>
+                        <div class="stat">
+                            <h3>95</h3>
+                            <p>ביקורות</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50-100₪</h3>
+                            <p>טווח מחירים</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>צור קשר</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>כתובת</h3>
+                    <p>מרכז אם המושבות<br>פתח תקווה</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <h3>טלפון</h3>
+                    <p><a href="tel:0375839050">03-758-9050</a></p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-clock"></i>
+                    <h3>שעות פעילות</h3>
+                    <p>סגור בשעה 22:00</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-utensils"></i>
+                    <h3>שירותים</h3>
+                    <p>הזמנה | אכילה במקום<br>משלוח ללא מגע</p>
+                </div>
+            </div>
+
+            <!-- Order Options -->
+            <div class="order-options">
+                <a href="https://wolt.com" target="_blank" class="order-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    הזמן דרך וולט
+                </a>
+                <a href="https://facebook.com" target="_blank" class="order-btn">
+                    <i class="fab fa-facebook"></i>
+                    עקוב בפייסבוק
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 שניצליגה. כל הזכויות שמורות.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
