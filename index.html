@@ -1,690 +1,432 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --primary-orange: #FF8C00;
-    --dark-orange: #FF7A00;
-    --bright-orange: #FFA500;
-    --black: #1a1a1a;
-    --dark-bg: #0d0d0d;
-    --white: #ffffff;
-    --text-light: #e0e0e0;
-    --accent-gold: #FFD700;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: var(--white);
-    background-color: var(--black);
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* ============ NAVIGATION ============ */
-.navbar {
-    background: linear-gradient(135deg, var(--black) 0%, #1a1a1a 100%);
-    border-bottom: 3px solid var(--primary-orange);
-    box-shadow: 0 4px 20px rgba(255, 140, 0, 0.2);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 20px;
-}
-
-.nav-brand {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: var(--primary-orange);
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.logo-img {
-    height: 55px;
-    width: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 0 8px rgba(255, 140, 0, 0.6));
-}
-
-.nav-menu {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
-}
-
-.nav-menu a {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 600;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.nav-menu a:hover {
-    color: var(--primary-orange);
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-orange);
-    transition: width 0.3s ease;
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
-}
-
-/* ============ HERO SECTION ============ */
-.hero {
-    background: linear-gradient(135deg, var(--black) 0%, #2a2a2a 50%, var(--black) 100%);
-    position: relative;
-    overflow: hidden;
-    padding: 80px 20px;
-    min-height: 600px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 5px solid var(--primary-orange);
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float 6s ease-in-out infinite;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    bottom: -50%;
-    left: -50%;
-    width: 500px;
-    height: 500px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    animation: float 8s ease-in-out infinite reverse;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(20px); }
-}
-
-.hero-content {
-    text-align: center;
-    position: relative;
-    z-index: 1;
-    animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.hero-logo {
-    height: 180px;
-    width: auto;
-    margin-bottom: 2rem;
-    object-fit: contain;
-    filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.5));
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { filter: drop-shadow(0 0 20px rgba(255, 140, 0, 0.5)); }
-    50% { filter: drop-shadow(0 0 30px rgba(255, 140, 0, 0.8)); }
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    color: var(--primary-orange);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
-    font-weight: 900;
-}
-
-.hero-content p {
-    font-size: 1.4rem;
-    margin-bottom: 2.5rem;
-    color: var(--text-light);
-    font-weight: 300;
-}
-
-.btn-primary {
-    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
-    color: var(--white);
-    padding: 15px 40px;
-    border: none;
-    border-radius: 50px;
-    font-size: 1.1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 6px 25px rgba(255, 140, 0, 0.4);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.btn-primary:hover {
-    background: linear-gradient(135deg, var(--dark-orange) 0%, var(--primary-orange) 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 10px 35px rgba(255, 140, 0, 0.6);
-}
-
-.btn-primary:active {
-    transform: translateY(-1px);
-}
-
-/* ============ HIGHLIGHTS SECTION ============ */
-.highlights {
-    padding: 70px 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-    border-top: 2px solid var(--primary-orange);
-    border-bottom: 2px solid var(--primary-orange);
-}
-
-.highlights .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 3rem;
-}
-
-.highlight-card {
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-    padding: 2.5rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 2px solid rgba(255, 140, 0, 0.2);
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.highlight-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary-orange), var(--bright-orange), var(--primary-orange));
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-}
-
-.highlight-card:hover::before {
-    transform: scaleX(1);
-}
-
-.highlight-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--primary-orange);
-    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.2);
-}
-
-.highlight-card i {
-    font-size: 3.5rem;
-    color: var(--primary-orange);
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.4));
-}
-
-.highlight-card h3 {
-    color: var(--primary-orange);
-    margin-bottom: 0.8rem;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.highlight-card p {
-    color: var(--text-light);
-    font-size: 0.95rem;
-}
-
-/* ============ MENU SECTION ============ */
-.menu {
-    padding: 80px 20px;
-    background: var(--black);
-}
-
-.menu h2 {
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--primary-orange);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 15px rgba(255, 140, 0, 0.4);
-}
-
-.menu h2::after {
-    content: '';
-    display: block;
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-orange), var(--bright-orange));
-    margin: 1rem auto 3rem;
-    border-radius: 2px;
-}
-
-/* Menu Categories */
-.menu-categories {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 3.5rem;
-    flex-wrap: wrap;
-}
-
-.category-btn {
-    padding: 12px 25px;
-    border: 2px solid var(--primary-orange);
-    background: transparent;
-    color: var(--primary-orange);
-    border-radius: 50px;
-    cursor: pointer;
-    font-weight: 700;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1px;
-}
-
-.category-btn:hover,
-.category-btn.active {
-    background: var(--primary-orange);
-    color: var(--black);
-    box-shadow: 0 0 20px rgba(255, 140, 0, 0.5);
-}
-
-/* Menu Grid */
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 2rem;
-}
-
-.menu-item {
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-    border-radius: 15px;
-    overflow: hidden;
-    border: 2px solid rgba(255, 140, 0, 0.15);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-}
-
-.menu-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(255, 140, 0, 0.2) 0%, transparent 100%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
-
-.menu-item:hover {
-    transform: translateY(-12px);
-    border-color: var(--primary-orange);
-    box-shadow: 0 15px 40px rgba(255, 140, 0, 0.25);
-}
-
-.menu-item:hover::before {
-    opacity: 1;
-}
-
-.menu-item-image {
-    height: 180px;
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-}
-
-.menu-item:hover .menu-item-image {
-    transform: scale(1.05);
-}
-
-.menu-item h3 {
-    padding: 1.2rem 1rem 0.5rem;
-    color: var(--primary-orange);
-    font-size: 1.2rem;
-    position: relative;
-    z-index: 2;
-}
-
-.menu-item .description {
-    padding: 0 1rem;
-    color: var(--text-light);
-    font-size: 0.85rem;
-    position: relative;
-    z-index: 2;
-}
-
-.menu-item .price {
-    padding: 0.8rem 1rem 1.2rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--accent-gold);
-    position: relative;
-    z-index: 2;
-}
-
-.menu-item.hidden {
-    display: none;
-}
-
-/* ============ ABOUT SECTION ============ */
-.about {
-    padding: 80px 20px;
-    background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
-    border-top: 3px solid var(--primary-orange);
-    border-bottom: 3px solid var(--primary-orange);
-}
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-}
-
-.about h2 {
-    font-size: 2.8rem;
-    margin-bottom: 1.5rem;
-    color: var(--primary-orange);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.about p {
-    color: var(--text-light);
-    margin-bottom: 1.3rem;
-    line-height: 1.8;
-    font-size: 1.05rem;
-}
-
-.stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2.5rem;
-}
-
-.stat {
-    text-align: center;
-    padding: 2rem;
-    background: linear-gradient(135deg, rgba(255, 140, 0, 0.15) 0%, rgba(255, 140, 0, 0.05) 100%);
-    border-radius: 12px;
-    border: 2px solid var(--primary-orange);
-}
-
-.stat h3 {
-    color: var(--primary-orange);
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.stat p {
-    color: var(--text-light);
-    margin: 0;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
-}
-
-@media (max-width: 768px) {
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ============ CONTACT SECTION ============ */
-.contact {
-    padding: 80px 20px;
-    background: var(--black);
-}
-
-.contact h2 {
-    text-align: center;
-    font-size: 2.8rem;
-    margin-bottom: 3rem;
-    color: var(--primary-orange);
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3.5rem;
-}
-
-.contact-info {
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-    padding: 2.5rem;
-    border-radius: 15px;
-    text-align: center;
-    border: 2px solid rgba(255, 140, 0, 0.15);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
-    transition: all 0.3s ease;
-}
-
-.contact-info:hover {
-    border-color: var(--primary-orange);
-    box-shadow: 0 12px 40px rgba(255, 140, 0, 0.2);
-    transform: translateY(-5px);
-}
-
-.contact-info i {
-    font-size: 3rem;
-    color: var(--primary-orange);
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 0 10px rgba(255, 140, 0, 0.4));
-}
-
-.contact-info h3 {
-    color: var(--primary-orange);
-    margin-bottom: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-.contact-info p {
-    color: var(--text-light);
-    line-height: 1.8;
-}
-
-.contact-info a {
-    color: var(--primary-orange);
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.contact-info a:hover {
-    color: var(--bright-orange);
-    text-shadow: 0 0 10px rgba(255, 140, 0, 0.5);
-}
-
-/* Order Options */
-.order-options {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.order-btn {
-    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
-    color: var(--black);
-    padding: 15px 35px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.95rem;
-}
-
-.order-btn:hover {
-    background: linear-gradient(135deg, var(--dark-orange) 0%, var(--primary-orange) 100%);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 35px rgba(255, 140, 0, 0.5);
-}
-
-/* ============ FOOTER ============ */
-.footer {
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
-    color: var(--text-light);
-    text-align: center;
-    padding: 2.5rem 20px;
-    border-top: 3px solid var(--primary-orange);
-}
-
-.footer p {
-    margin: 0;
-    font-weight: 500;
-}
-
-/* ============ RESPONSIVE ============ */
-@media (max-width: 1024px) {
-    .hero-content h1 {
-        font-size: 2.5rem;
-    }
-
-    .menu h2 {
-        font-size: 2.2rem;
-    }
-
-    .about h2 {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-menu {
-        gap: 1.2rem;
-        font-size: 0.9rem;
-    }
-
-    .logo-img {
-        height: 40px;
-    }
-
-    .hero-logo {
-        height: 120px;
-        margin-bottom: 1rem;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-content p {
-        font-size: 1rem;
-    }
-
-    .menu-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 1.2rem;
-    }
-
-    .highlight-card {
-        padding: 1.8rem;
-    }
-
-    .order-options {
-        flex-direction: column;
-    }
-
-    .order-btn {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.5rem;
-        letter-spacing: 1px;
-    }
-
-    .menu-categories {
-        gap: 0.5rem;
-    }
-
-    .category-btn {
-        padding: 8px 15px;
-        font-size: 0.75rem;
-    }
-
-    .menu-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    .stats {
-        grid-template-columns: 1fr;
-    }
-}
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>שניצליגה - מסעדת שניצל איכותית | פתח תקווה</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <!-- LOGO SECTION -->
+                <img src="images/logo.png" alt="שניצליגה לוגו" class="logo-img">
+                <span>שניצליגה</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">בית</a></li>
+                <li><a href="#menu">תפריט</a></li>
+                <li><a href="#about">אודותינו</a></li>
+                <li><a href="#contact">צור קשר</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Logo -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <!-- LARGE LOGO IN HERO -->
+            <img src="images/logo.png" alt="שניצליגה לוגו" class="hero-logo">
+            <h1>שניצליגה</h1>
+            <p>שניצל טעים, טרי וכשר בכל הזמן!</p>
+            <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">
+                הצג תפריט
+            </button>
+        </div>
+    </section>
+
+    <!-- Highlights -->
+    <section class="highlights">
+        <div class="container">
+            <div class="highlight-card">
+                <i class="fas fa-bolt"></i>
+                <h3>הזמנה מהירה</h3>
+                <p>השירות שלנו מהיר וחביב</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-utensils"></i>
+                <h3>אוכל טעים</h3>
+                <p>מצרכים טריים באיכות גבוהה</p>
+            </div>
+            <div class="highlight-card">
+                <i class="fas fa-star"></i>
+                <h3>דירוג 4.6</h3>
+                <p>95 ביקורות חיוביות מלקוחות</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2>תפריט</h2>
+            
+            <!-- Menu Categories -->
+            <div class="menu-categories">
+                <button class="category-btn active" onclick="filterMenu('all')">הכל</button>
+                <button class="category-btn" onclick="filterMenu('pita')">פיתות</button>
+                <button class="category-btn" onclick="filterMenu('baguette')">בגטים</button>
+                <button class="category-btn" onclick="filterMenu('plate')">צלחות</button>
+                <button class="category-btn" onclick="filterMenu('salad')">סלטים</button>
+                <button class="category-btn" onclick="filterMenu('side')">תוספות</button>
+                <button class="category-btn" onclick="filterMenu('drink')">משקאות</button>
+            </div>
+
+            <!-- Menu Items Grid -->
+            <div class="menu-grid">
+                
+                <!-- PITA SECTION -->
+                <div class="menu-item" data-category="pita">
+                    <img src="images/schnitzel.avif" alt="שניצל בפיתה" class="menu-item-image">
+                    <h3>שניצל בפיתה</h3>
+                    <p class="description">שניצל טרי עם סלטים וממרחים</p>
+                    <p class="price">₪50</p>
+                </div>
+
+                <div class="menu-item" data-category="pita">
+                    <img src="images/chicken.breast.avif" alt="חזה עוף בפיתה" class="menu-item-image">
+                    <h3>חזה עוף בפיתה</h3>
+                    <p class="description">חזה עוף טרי עם סלטים</p>
+                    <p class="price">₪50</p>
+                </div>
+
+                <div class="menu-item" data-category="pita">
+                    <img src="images/hot.dog.avif" alt="נקניקייה בפיתה" class="menu-item-image">
+                    <h3>נקניקייה בפיתה</h3>
+                    <p class="description">נקניקייה עם סלטים וממרחים</p>
+                    <p class="price">₪35</p>
+                </div>
+
+                <div class="menu-item" data-category="pita">
+                    <img src="images/falafel.avif" alt="פלאפל בפיתה" class="menu-item-image">
+                    <h3>פלאפל בפיתה</h3>
+                    <p class="description">פלאפל טרי עם סלטים</p>
+                    <p class="price">₪32</p>
+                </div>
+
+                <div class="menu-item" data-category="pita">
+                    <img src="images/chicken.breast.avif" alt="עוף בפיתה" class="menu-item-image">
+                    <h3>עוף בפיתה</h3>
+                    <p class="description">עוף רך עם תוספות</p>
+                    <p class="price">₪60</p>
+                </div>
+
+                <!-- BAGUETTE SECTION -->
+                <div class="menu-item" data-category="baguette">
+                    <img src="images/schnitzel.avif" alt="שניצל בגט" class="menu-item-image">
+                    <h3>שניצל בגט</h3>
+                    <p class="description">שניצל בגט טרי עם סלטים וממרחים</p>
+                    <p class="price">₪55</p>
+                </div>
+
+                <div class="menu-item" data-category="baguette">
+                    <img src="images/schnitzel.avif" alt="שניצל בחלה" class="menu-item-image">
+                    <h3>שניצל בחלה</h3>
+                    <p class="description">שניצל בחלה עם סלטים וממרחים</p>
+                    <p class="price">₪55</p>
+                </div>
+
+                <div class="menu-item" data-category="baguette">
+                    <img src="images/chicken.breast.avif" alt="חזה עוף בגט" class="menu-item-image">
+                    <h3>חזה עוף בגט</h3>
+                    <p class="description">חזה עוף בגט עם סלטים</p>
+                    <p class="price">₪55</p>
+                </div>
+
+                <div class="menu-item" data-category="baguette">
+                    <img src="images/hot.dog.avif" alt="נקניקייה בגט" class="menu-item-image">
+                    <h3>נקניקייה בגט</h3>
+                    <p class="description">נקניקייה עם סלטים</p>
+                    <p class="price">₪39</p>
+                </div>
+
+                <div class="menu-item" data-category="baguette">
+                    <img src="images/falafel.avif" alt="פלאפל בגט" class="menu-item-image">
+                    <h3>פלאפל בגט</h3>
+                    <p class="description">פלאפל עם סלטים וממרחים</p>
+                    <p class="price">₪38</p>
+                </div>
+
+                <!-- PLATE SECTION -->
+                <div class="menu-item" data-category="plate">
+                    <img src="images/schnitzel.plate.avif" alt="שניצל בצלחת" class="menu-item-image">
+                    <h3>שניצל בצלחת</h3>
+                    <p class="description">שניצל חם ופריך עם 2 תוספות</p>
+                    <p class="price">₪65</p>
+                </div>
+
+                <div class="menu-item" data-category="plate">
+                    <img src="images/chicken.breast.plate.avif" alt="חזה עוף בצלחת" class="menu-item-image">
+                    <h3>חזה עוף בצלחת</h3>
+                    <p class="description">חזה עוף טרי עם 2 תוספות</p>
+                    <p class="price">₪65</p>
+                </div>
+
+                <div class="menu-item" data-category="plate">
+                    <img src="images/pargit.plate.avif" alt="עוף בצלחת" class="menu-item-image">
+                    <h3>עוף בצלחת</h3>
+                    <p class="description">עוף רך עם 2 תוספות</p>
+                    <p class="price">₪69</p>
+                </div>
+
+                <div class="menu-item" data-category="plate">
+                    <img src="images/falafel.avif" alt="פלאפל בצלחת" class="menu-item-image">
+                    <h3>פלאפל בצלחת</h3>
+                    <p class="description">פלאפל עם 2 תוספות</p>
+                    <p class="price">₪42</p>
+                </div>
+
+                <!-- SALAD SECTION -->
+                <div class="menu-item" data-category="salad">
+                    <img src="images/schnitzel.salad.avif" alt="סלט שניצל" class="menu-item-image">
+                    <h3>סלט שניצל</h3>
+                    <p class="description">סלט טרי עם נתחי שניצל</p>
+                    <p class="price">₪64</p>
+                </div>
+
+                <div class="menu-item" data-category="salad">
+                    <img src="images/chicken.breast.salad.avif" alt="סלט חזה עוף" class="menu-item-image">
+                    <h3>סלט חזה עוף</h3>
+                    <p class="description">סלט טרי עם נתחי חזה עוף</p>
+                    <p class="price">₪64</p>
+                </div>
+
+                <div class="menu-item" data-category="salad">
+                    <img src="images/pargit.salad.avif" alt="סלט עוף" class="menu-item-image">
+                    <h3>סלט עוף</h3>
+                    <p class="description">סלט טרי עם נתחי עוף</p>
+                    <p class="price">₪69</p>
+                </div>
+
+                <div class="menu-item" data-category="salad">
+                    <img src="images/falafel.avif" alt="סלט פלאפל" class="menu-item-image">
+                    <h3>סלט פלאפל</h3>
+                    <p class="description">סלט טרי עם פלאפל</p>
+                    <p class="price">₪42</p>
+                </div>
+
+                <!-- SIDES SECTION -->
+                <div class="menu-item" data-category="side">
+                    <img src="images/chips.avif" alt="צ'יפס" class="menu-item-image">
+                    <h3>צ'יפס</h3>
+                    <p class="description">תפוחי אדמה עם ציפוי פריך</p>
+                    <p class="price">₪20</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <img src="images/potatoes.balls.avif" alt="כדורי פירה" class="menu-item-image">
+                    <h3>כדורי פירה</h3>
+                    <p class="description">כדורי תפו"א קראנצ'י ונימוחים</p>
+                    <p class="price">₪25</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <img src="images/onion.rings.avif" alt="טבעות בצל" class="menu-item-image">
+                    <h3>טבעות בצל</h3>
+                    <p class="description">טבעות בצל פריכות וטעימות</p>
+                    <p class="price">₪25</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <img src="images/potatoes.avif" alt="פוטטוס" class="menu-item-image">
+                    <h3>פוטטוס</h3>
+                    <p class="description">פלחי תפו"א קראנצ'י</p>
+                    <p class="price">₪29</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <img src="images/schnitzel.chips.mix.avif" alt="מיקס שניצל וצ'יפס" class="menu-item-image">
+                    <h3>מיקס שניצל וצ'יפס</h3>
+                    <p class="description">רצועות שניצל וצ'יפס</p>
+                    <p class="price">₪39</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <img src="images/schnitzel.chips.hotdog.mix.avif" alt="מיקס שניצל נקנקייה וצ'יפס" class="menu-item-image">
+                    <h3>מיקס שניצל נקנקייה וצ'יפס</h3>
+                    <p class="description">שניצל, נקנקייה וצ'יפס</p>
+                    <p class="price">₪42</p>
+                </div>
+
+                <div class="menu-item" data-category="side">
+                    <img src="images/chips.hotdog.mix.avif" alt="מיקס נקנקייה וצ'יפס" class="menu-item-image">
+                    <h3>מיקס נקנקייה וצ'יפס</h3>
+                    <p class="description">נקנקייה וצ'יפס</p>
+                    <p class="price">₪37</p>
+                </div>
+
+                <!-- DRINKS SECTION -->
+                <div class="menu-item" data-category="drink">
+                    <img src="images/coca.cola.avif" alt="קולה" class="menu-item-image">
+                    <h3>קולה</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪13</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/coca.cola.zero.avif" alt="קולה זירו" class="menu-item-image">
+                    <h3>קולה זירו</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪13</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/sprite.jpg" alt="ספרייט" class="menu-item-image">
+                    <h3>ספרייט</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪13</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/sprite.zero.jpg" alt="ספרייט זירו" class="menu-item-image">
+                    <h3>ספרייט זירו</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪13</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/fanta.avif" alt="פאנטה" class="menu-item-image">
+                    <h3>פאנטה</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪13</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/water.avif" alt="מים מינרליים" class="menu-item-image">
+                    <h3>מים מינרליים</h3>
+                    <p class="description">בקבוק 500 מ"ל</p>
+                    <p class="price">₪12</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/fuze.tee.avif" alt="פיוז תה אפרסק" class="menu-item-image">
+                    <h3>פיוז תה אפרסק</h3>
+                    <p class="description">בקבוק 500 מ"ל</p>
+                    <p class="price">₪15</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/orange.juice.avif" alt="מיץ תפוזים" class="menu-item-image">
+                    <h3>מיץ תפוזים</h3>
+                    <p class="description">בקבוק זכוכית 330 מ"ל</p>
+                    <p class="price">₪15</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/grape.juice.avif" alt="מיץ ענבים" class="menu-item-image">
+                    <h3>מיץ ענבים</h3>
+                    <p class="description">בקבוק זכוכית 330 מ"ל</p>
+                    <p class="price">₪15</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/grapefruit juice.avif" alt="מיץ אשכוליות" class="menu-item-image">
+                    <h3>מיץ אשכוליות</h3>
+                    <p class="description">בקבוק זכוכית 330 מ"ל</p>
+                    <p class="price">₪15</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/black.beer.avif" alt="בירה שחורה מאלטי" class="menu-item-image">
+                    <h3>בירה שחורה מאלטי</h3>
+                    <p class="description">פחית 330 מ"ל</p>
+                    <p class="price">₪15</p>
+                </div>
+
+                <div class="menu-item" data-category="drink">
+                    <img src="images/soda.avif" alt="קינלי סודה" class="menu-item-image">
+                    <h3>קינלי סודה</h3>
+                    <p class="description">בקבוק 250 מ"ל</p>
+                    <p class="price">₪12</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>אודות שניצליגה</h2>
+                    <p>שניצליגה היא מסעדת מזון מהיר המתמחה בשניצל טוב ופרגיות מעולות. אנחנו משתמשים רק במצרכים טריים ובעלי איכות גבוהה.</p>
+                    <p>השירות שלנו חביב ומהיר, והאוכל תמיד חם וטעים. אנחנו מציעים הזמנה בחנות, אכילה במקום ומשלוח ללא מגע.</p>
+                    <p>מיקומנו במרכז אם המושבות בפתח תקווה, וחנות פתוחה עד שעה 22:00 כל יום.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <h3>4.6★</h3>
+                            <p>דירוג</p>
+                        </div>
+                        <div class="stat">
+                            <h3>95+</h3>
+                            <p>ביקורות</p>
+                        </div>
+                        <div class="stat">
+                            <h3>50-100₪</h3>
+                            <p>טווח מחירים</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>צור קשר</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>כתובת</h3>
+                    <p>מרכז אם המושבות<br>פתח תקווה</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-phone"></i>
+                    <h3>טלפון</h3>
+                    <p><a href="tel:0375839050">03-758-9050</a></p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-clock"></i>
+                    <h3>שעות פעילות</h3>
+                    <p>כל יום עד 22:00</p>
+                </div>
+                <div class="contact-info">
+                    <i class="fas fa-utensils"></i>
+                    <h3>שירותים</h3>
+                    <p>הזמנה | אכילה במקום<br>משלוח ללא מגע</p>
+                </div>
+            </div>
+
+            <!-- Order Options -->
+            <div class="order-options">
+                <a href="https://wolt.com/he/isr/petah-tikva/restaurant/schnitzeliga" target="_blank" class="order-btn">
+                    <i class="fas fa-shopping-bag"></i>
+                    הזמן דרך וולט
+                </a>
+                <a href="https://www.10bis.co.il/next/en/restaurants/menu/delivery/46418/shnitzeliga" target="_blank" class="order-btn">
+                    <i class="fas fa-utensils"></i>
+                    הזמן דרך 10ביס
+                </a>
+                <a href="https://facebook.com" target="_blank" class="order-btn">
+                    <i class="fab fa-facebook"></i>
+                    עקוב בפייסבוק
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 שניצליגה. כל הזכויות שמורות. | מרכז אם המושבות, פתח תקווה</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
